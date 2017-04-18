@@ -101,8 +101,8 @@ class Net(nn.Module):
         self.l4 = nn.Linear(2, 2)
 
     def forward(self, x):
-        x = F.tanh(self.l1(x))
-        x = F.tanh(self.l2(x))
+        x = F.relu(self.l1(x))
+        x = F.relu(self.l2(x))
         # x = F.relu(self.l3(x))
         x = self.l4(x)
         if not self.training:
